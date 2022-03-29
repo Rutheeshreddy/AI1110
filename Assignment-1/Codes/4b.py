@@ -10,5 +10,6 @@ plt.plot(x,y)
 
 y1=(-5*(4*x+9))/12
 plt.plot(x,y1)
+plt.title('Plot')
 plt.legend(['3x-9y-7','4x+(12/5)x+9'],loc='upper left')
 plt.show()
