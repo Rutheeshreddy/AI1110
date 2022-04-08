@@ -165,41 +165,56 @@ columns=fullflexible
   cs21btech11014}
   
 \maketitle{}
-\raggedright
-\subsection*{\textbf{4b[ICSE 2018]}}
+
+\section*{\textbf{4b [ICSE 2018 10$^{th}$]}}
 
 If the straight lines $3x- 5y = 7$ and $4x+ ay+ 9 = 0$ are perpendicular to one 
 another, find the value of a.
 
-\subsection*{\textbf{Solution}}
-If two lines are perpendicular, then dot product of their normal vectors is 0.
+\section*{\textbf{Solution}}
+
+\begin{enumerate}
+
+
+\item If two lines are perpendicular, then dot product of their normal vectors is 0.
 \newline
 
-The equation of a line  is given by  
-  \newline	
- $   \vec{n}^{\top}\vec{x} = c $ \\
+\item The equation of a line  is given by 
+  \begin{align*}  
+    \vec{n}^{\top}\vec{x} = c  
+   \end{align*}
+   
 		where $\vec{n}$ is the normal vector of the line. 
 	\newline	
 	
- Vector form of 3x - 5y =7 is \\ $\myvec{3\\-5}\myvec{x\\y} = 7$,\, with $\myvec{3\\-5}$ as normal vector.
+ Vector form of 3x - 5y =7 is 
+ \begin{align}  
+ \myvec{3\\-5}\myvec{x\\y} = 7
+ \end{align}
+  with $\myvec{3\\-5}$ as normal vector.
  \newline \newline
  
  
- Vector form of 4x+ay+9=0 is  \\ $\myvec{4\\a}\myvec{x\\y} =-9$,\, with $\myvec{4\\a}$ as normal vector.
-\newline 
-   
-   As  \,\,  $\myvec{3\\-5}$$\myvec{4\\a}$= 0
-   \newline \newline
-   
-    12 - 5a = 0 
-  \newline
- 
-   So  \,  a = $(\frac{12}{5})$
-   
-   
-   
-  
-  \graphicspath{{D:/Semester 2/Probability and Random Variables AI1110/Assignments/1/}}   
-\includegraphics[scale=0.6]{Figure_1}
+ Vector form of 4x+ay+9=0 is  
+\begin{align} 
+  \myvec{4\\a}\myvec{x\\y} =-9
+\end{align}  
+   with $\myvec{4\\a}$ as normal vector.
+\newline \newline
+By result in 1, 
+ \begin{align}
+ \myvec{3\\-5}\myvec{4\\a}= 0\\
+    12 - 5a = 0 \\
+   So  \,\,\,  a = \frac{12}{5}
+\end{align}   
+  \\\\\\\\\\\\
+\section*{\textbf{Plot}}   
+ \begin{figure}[h!]  
+  \graphicspath{{./Figures/}}  
+\includegraphics[width=\columnwidth]{Figure_1}
+\label{Fig1}
+\caption{Plot of two lines with a = $\frac{12}{5}$}
+\end{figure}
+\end{enumerate}
 
 \end{document}
