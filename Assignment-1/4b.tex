@@ -176,7 +176,10 @@ another, find the value of a.
 \begin{enumerate}
 
 
-\item If two lines are perpendicular, then dot product of their normal vectors is 0.
+\item If two lines with normals $\vec{n}_1,\vec{n}_2$ are perpendicular, then
+\begin{align}
+  \vec{n}^{\top}_1\vec{n}_2 = \vec{n}^{\top}_2\vec{n}_1 = 0 \label{eq:eq1}
+\end{align}
 \newline
 
 \item The equation of a line  is given by 
@@ -191,7 +194,7 @@ another, find the value of a.
  \begin{align}  
  \myvec{3&-5}\myvec{x\\y} = 7
  \end{align}
-  with $\myvec{3\\-5}$ as normal vector.
+  with $\vec{n}_1 = \myvec{3\\-5}$ as normal vector.
  \newline \newline
  
  
@@ -199,11 +202,11 @@ another, find the value of a.
 \begin{align} 
   \myvec{4&a}\myvec{x\\y} =-9
 \end{align}  
-   with $\myvec{4\\a}$ as normal vector.
+   with $\vec{n}_2 = \myvec{4\\a}$ as normal vector.
 \newline \newline
-By result in 1, 
+By result  \ref{eq:eq1}, 
  \begin{align}
- \myvec{3\\-5}\myvec{4\\a}= 0\\
+ \myvec{3&-5}\myvec{4\\a}= 0\\
     12 - 5a = 0 \\
    So  \,\,\,  a = \frac{12}{5}
 \end{align}   
