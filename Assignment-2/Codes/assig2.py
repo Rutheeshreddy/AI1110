@@ -8,7 +8,9 @@ def M(x):
 
 def I(y):
       
-    exp=sp.integrate(M(x),x)
+    exp=sp.integrate(M(x),x) 
+    #This does symbolic integration and hence cannot be used for computations in present state.
+    #Lambdify converts symbolic expression to normal form, so that it cam be used for computations.
     k = sp.lambdify(x,exp)
     return k(y)
 
@@ -16,7 +18,7 @@ def C(x,c):
 
     return I(x)+c 
 
-# We can use the fact C(1) =7 to calculate c and shall always call C along with c
+# We can use the fact C(1) =7 to calculate c and shall always call C along with c parameter
 
 c = 7 - I(1)
 
