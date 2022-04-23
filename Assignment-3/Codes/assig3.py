@@ -1,11 +1,9 @@
+
 from openpyxl  import Workbook, load_workbook
 
 wb = load_workbook('assig3.xlsx')
 ws = wb.active
 
-print(ws['A2'].value)
-
-print(type(ws['B2'].value))
 N=0
 for cols in range(1,5):
         for rows in range(2,7):
