@@ -32,7 +32,6 @@ for cols in range(1,3):
         for rows in range(2,7):
                 char=chr(65+cols)
                 n=n+ws[char+str(rows)].value
-print(n)
 p5=n/N
 print('Probability of families owning not more than 1 vehicle is {0:.3f}'.format(p5))
 
