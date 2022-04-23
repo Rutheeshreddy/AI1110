@@ -32,6 +32,4 @@ print('M(x) is given to be ',M(x))
 
 print('So, C(x) is ',sp.simplify(C(x,c)))
 
-exp =sp.simplify(A(x,c))
-
-print('And A(x) is',exp)
+print('And A(x) is ',sp.simplify(A(x,c)))
