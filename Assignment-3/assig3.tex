@@ -175,7 +175,7 @@ columns=fullflexible
 \centering
 \input{Tables/table.tex}
 \caption{}
-\label{table:Table}
+\label{table:table1}
 \end{table} 
 Suppose a family is chosen.Find the probability that the family chosen is\\
 (i) earning \rupee 10000 – \rupee 13000 per month and owning exactly 2 vehicles.\\
@@ -184,11 +184,16 @@ Suppose a family is chosen.Find the probability that the family chosen is\\
 (iv) earning \rupee 13000 – \rupee 16000 per month and owning more than 2 vehicles.\\
 (v) owning not more than 1 vehicle.
 
-
 \textbf{Solution:}
-Let $X$ be the random variable denoting the number of vehicles and $Y$ be the income.
+\begin{table}[!ht]
+\centering
+\input{Tables/table2.tex}
+\caption{}
+\label{table:table2}
+\end{table} 
+
 \begin{enumerate}
-\item Total number of families is sum of values in all cell,
+\item Total number of families is sum of values in all cells,
 which is = 2400
 
 \item
@@ -216,7 +221,7 @@ which is = 2400
 \\
 &= 0.0104
 \end{align}
-\item For this case, the number of families is given by the sum of columns 0 and 1 in Table \ref{table:Table}.  Hence, 
+\item For this case, the number of families is given by the sum of columns 0 and 1 in Table \ref{table:table1}.  Hence, 
 \begin{align}
 \pr{X <  2}
  &= \frac{2062}{2400}
