@@ -1,20 +1,17 @@
+import numpy as np
+from scipy.stats import bernoulli 
+N= int(1e5) 
 
+X = bernoulli.rvs(p=0.5,size=N)
 
-def total_prob(p1,p2,p_red1,p_red2) :
-    return p1*p_red1+p2*p_red2
+n1 = np.count_nonzero(X==0)
+n2 = np.count_nonzero(X==1)
 
+Y1 = bernoulli.rvs(p=7/12,size=n1)
+Y2 = bernoulli.rvs(p=5/12,size=n1)
 
-#Probability of picking red ball
-p_1= 0.5
-#Probability of picking black ball
-p_2= 1-p_1
-#Probability of getting red ball if first ball is red
-p_red_1= 7/12
-#Probability of getting red ball if first ball is black
-p_red_2= 5/12
+#Probability that Y==0
 
-#Probability that a red ball is picked
-prob= total_prob(p_1,p_2,p_red_1, p_red_2)
+p = (np.count_nonzero(Y1==0)+np.count_nonzero(Y2==0))/N
 
-print(prob)
-      
+print("Theoretical probability is 0.5. Practical probability is {}",format(p))
