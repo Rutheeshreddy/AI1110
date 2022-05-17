@@ -45,6 +45,9 @@
 \providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
 \providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
 \providecommand{\abs}[1]{\vert#1\vert}
+\newcommand*{\permcomb}[4][0mu]{{{}^{#3}\mkern#1#2_{#4}}}
+\newcommand*{\perm}[1][-3mu]{\permcomb[#1]{P}}
+\newcommand*{\comb}[1][-1mu]{\permcomb[#1]{C}}
 
 \newcounter{saveenumi}
 \newcommand{\seti}{\setcounter{saveenumi}{\value{enumi}}}
@@ -84,20 +87,7 @@
     \tableofcontents
 \end{frame}
 
-% Lists frame
-\section{Total Probability Theorem}
-\begin{frame}{Total Probability Theorem}
 
-
-\textbf{Statement:}
-
-Let the events $E_1, E_2, E_3, ......E_n$ be a set of exhaustive events of a sample space S, such that {$E_1, E_2, E_3, ......E_n$} are partitions of a sample space S, the happening of a event A from the sample space S is\\
-
-\begin{align}
- \pr{A} = \sum_{i=1}^n \pr{E_i}\pr{A|E_i}
-\end{align}
-
-\end{frame}
 
 
 % Lists frame
@@ -105,41 +95,31 @@ Let the events $E_1, E_2, E_3, ......E_n$ be a set of exhaustive events of a sam
 \begin{frame}{Question}
 
 \begin{block}
-{\textbf{Q1 [12$^{th}$ CBSE Probability Exercise 13.3]:}}
+{\textbf{Q15 [12$^{th}$ CBSE Probability Exercise 13.5]:}}
 
-An urn contains 5 red and 5 black balls. A ball is drawn at random, its colour is noted and is returned to the urn. Moreover, 2 additional balls of the colour drawn are put in the urn and then a ball is drawn at random. What is the probability that the second ball is red?
+The probability that a student is not a swimmer is $\frac{1}{5}$. Then
+the probability that out of five students, four are swimmers is?
+
 \end{block}
 \end{frame}
 
 
 % Blocks frame
 \section{Solution}
+
 \begin{frame}{Solution}
-Let $X \in \{0,1\}$ and $Y \in \{0,1\}$ be the random variables representing the outcomes defined as follows.\\
-\begin{table}[ht!]
-\input{./tables/table1.tex}
-\caption{}
-\label{table:table1}
-\end{table}
-\end{frame}
-\begin{frame}{Solution}
- Given data of the question, in terms of probability is presented in the table 
- 
- \begin{table}[ht!]
- \centering
-\input{./tables/table2.tex}
-\caption{}
-\label{table:table2}
-\end{table}
-\end{frame}
-\begin{frame}{Solution}
-The required probability is \pr{Y=0}.\\ 
-By total probability theorem \\
+Let X be the number of students and given that the probability of a student being swimmer is $\frac{1}{5}$
+
+Then $X$ has the binomial distribution  
 \begin{align}
-  \pr{Y=0} &= \sum_{i=0}^1 \pr{Y=0|X=i}\pr{X=i}\\
-           &= \frac{7}{12}.\frac{1}{2} + \frac{5}{12}.\frac{1}{2}\\
-           &= \frac{1}{2}    
+\pr{X=k} = \comb{n}{k}p^k\brak{1-p}^{n-k}
 \end{align}
-  $\therefore$ The probability that second ball drawn is red is 0.5
+ Here,  
+ \begin{align}
+ p=\frac{1}{5}\\
+ n=5\\
+ k=4
+ \end{align}
+$\therefore$ The required probability is $\comb{5}{4}\brak{\frac{4}{5}}^4\brak{\frac{1}{5}}$
 \end{frame} 
 \end{document}
