@@ -1,8 +1,23 @@
+from scipy.stats import binom
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.stats import binom
 
-x=np.arange(0,6)
-y=binom.pmf(x,5,0.8)
-plt.stem(x,y)
+#Number of trials, probability of success
+n = 5
+p = 4/5
+
+#Binomial Random Variable
+rv = binom(n, p)
+
+#X axis
+x_val = np.arange((n+1))
+
+#PMF Values (Y axis)
+pmf_val = rv.pmf(x_val)
+
+#Plot
+plt.plot(x_val, pmf_val, 'ro')
+plt.vlines(x_val, 0, pmf_val, colors='k', label='Probability')
+plt.legend(loc = 'best', frameon = True)
+
 plt.show()
