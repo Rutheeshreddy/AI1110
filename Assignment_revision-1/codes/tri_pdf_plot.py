@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 
 
-points=50
+points=100
 maxlim=6.0
 x = np.linspace(-maxlim,maxlim,points)
 N = int(1e6) 
@@ -13,7 +13,7 @@ cdf = []
 pdf = [] 
 h = 2*maxlim/(points-1)
 
-randvar = np.loadtxt('gau.dat',dtype='double')
+randvar = np.loadtxt('tri.dat',dtype='double')
 
 for i in range(0,points):
 	cdf_ind = np.nonzero(randvar < x[i]) 
@@ -25,19 +25,25 @@ for i in range(0,points-1):
 	test = (cdf[i+1]-cdf[i])/(x[i+1]-x[i]) # approximating differential
 	pdf.append(test)
 
-def gauss_pdf(x):
-	return 1/mp.sqrt(2*np.pi)*np.exp(-x**2/2.0)
-	
-vec_gauss_pdf = scipy.vectorize(gauss_pdf)
+def tri_pdf(x):
+    if(x<=0): return 0
+    if(x>0 and x<=1):
+         return x
+    if(x>1 and x<=2): 
+        return 2-x
+    else: return 0
+   
+ 
+
+vec_tri_pdf = scipy.vectorize(tri_pdf,otypes=[float])
 
 plt.plot(x[0:(points-1)].T,pdf,'o')
-plt.plot(x,vec_gauss_pdf(x))
+plt.plot(x,vec_tri_pdf(x))
 plt.grid() 
 plt.xlabel('$x_i$')
 plt.ylabel('$p_X(x_i)$')
 plt.legend(["Simulation","Analysis"])
 
-plt.savefig('../figs/gauss_pdf.png')
+plt.savefig('../figs/tri_pdf.png')
 
 plt.show()
-

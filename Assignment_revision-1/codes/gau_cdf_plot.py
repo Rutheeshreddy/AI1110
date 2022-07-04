@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import mpmath as mp
 
 N = int(1e6)
 
@@ -15,9 +16,18 @@ for i in range(0,30):
     n = np.size(n_arr)
     cdf.append(n/N)
 
-plt.plot(x,cdf)
+def Q(x):
+    return (mp.erfc(x/mp.sqrt(2))/2)
+def g_cdf(x):
+    return 1 - Q(x)
+vec_gau_cdf = np.vectorize(g_cdf,otypes=[float])
+plt.plot(x,cdf,'bo')
+plt.plot(x,vec_gau_cdf(x),'orange')
 plt.grid() 
 plt.xlabel('$x$')
 plt.ylabel('$F_X(x)$')
-plt.savefig('../figs/uni_cdf.png')
+plt.legend(['Simulation','Analysis'])
+plt.savefig('../figs/gauss_cdf.png')
 plt.show()
+
+
