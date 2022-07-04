@@ -1,39 +1,151 @@
-\documentclass{beamer}
-\usepackage{listings}
-\usepackage{blkarray}
-\usepackage{listings}
-\usepackage{subcaption}
-\usepackage{url}
-\usepackage{tikz}
-\usepackage{tkz-euclide} % loads  TikZ and tkz-base
-%\usetkzobj{all}
-\usetikzlibrary{calc,math}
-\usepackage{float}
-\newcommand\norm[1]{\left\lVert#1\right\rVert}
-\renewcommand{\vec}[1]{\mathbf{#1}}
-\usepackage[export]{adjustbox}
-\usepackage[utf8]{inputenc}
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{setspace}
+\usepackage{gensymb}
+\usepackage{caption}
+%\usepackage{multirow}
+%\usepackage{multicolumn}
+%\usepackage{subcaption}
+%\doublespacing
+\singlespacing
+\usepackage{csvsimple}
 \usepackage{amsmath}
-\usepackage{amsfonts}
+\usepackage{multicol}
+%\usepackage{enumerate}
+\usepackage{amssymb}
+%\usepackage{graphicx}
+\usepackage{newfloat}
+%\usepackage{syntax}
+\usepackage{listings}
+\usepackage{color}
 \usepackage{tikz}
-\usepackage{hyperref}
+\usetikzlibrary{shapes,arrows}
+
+
+
+%\usepackage{graphicx}
+%\usepackage{amssymb}
+%\usepackage{relsize}
+%\usepackage[cmex10]{amsmath}
+%\usepackage{mathtools}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage{enumerate}	
+\usepackage{enumitem}
+\usepackage{amsmath}
+%\usepackage{xtab}
+\usepackage{longtable}
 \usepackage{multirow}
-\usepackage{bm}
-\hypersetup{
-    colorlinks = true,
-    linkbordercolor = {white},
-    linkcolor={red},
-    citecolor={green},
-    filecolor={blue},
-	menucolor={red},
-	runcolor={cyan},
-	urlcolor={blue},
-	breaklinks=true
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{hyperref}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{listings}
+    %\usepackage[latin1]{inputenc}                                 %%
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  %optionally (for landscape tables embedded in another document): %%
+    \usepackage{lscape}     
+
+
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-}
+
+
+%\usepackage{stmaryrd}
+
+
+%\usepackage{wasysym}
+%\newcounter{MYtempeqncnt}
+\DeclareMathOperator*{\Res}{Res}
+%\renewcommand{\baselinestretch}{2}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+%\lstset{
+%language=C,
+%frame=single, 
+%breaklines=true
+%}
+
+%\lstset{
+	%%basicstyle=\small\ttfamily\bfseries,
+	%%numberstyle=\small\ttfamily,
+	%language=Octave,
+	%backgroundcolor=\color{white},
+	%%frame=single,
+	%%keywordstyle=\bfseries,
+	%%breaklines=true,
+	%%showstringspaces=false,
+	%%xleftmargin=-10mm,
+	%%aboveskip=-1mm,
+	%%belowskip=0mm
+%}
+
+%\surroundwithmdframed[width=\columnwidth]{lstlisting}
+\def\inputGnumericTable{}                                 %%
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
 }
-\usetikzlibrary{automata, positioning}
-\usetheme{Boadilla}
-\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+ 
+
+\begin{document}
+%
+\tikzstyle{block} = [rectangle, draw,
+    text width=3em, text centered, minimum height=3em]
+\tikzstyle{sum} = [draw, circle, node distance=3cm]
+\tikzstyle{input} = [coordinate]
+\tikzstyle{output} = [coordinate]
+\tikzstyle{pinstyle} = [pin edge={to-,thin,black}]
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}{Definition}[section]
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+%\bibliographystyle{ieeetr}
+\providecommand{\nCr}[2]{\,^{#1}C_{#2}} % nCr
+\providecommand{\nPr}[2]{\,^{#1}P_{#2}} % nPr
 \providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
 \providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
 \providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
 \providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
@@ -44,65 +156,144 @@
 \providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
 \providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
 \providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
-\providecommand{\abs}[1]{\vert#1\vert}
-\newcommand*{\permcomb}[4][0mu]{{{}^{#3}\mkern#1#2_{#4}}}
-\newcommand*{\perm}[1][-3mu]{\permcomb[#1]{P}}
-\newcommand*{\comb}[1][-1mu]{\permcomb[#1]{C}}
-
-\newcounter{saveenumi}
-\newcommand{\seti}{\setcounter{saveenumi}{\value{enumi}}}
-\newcommand{\conti}{\setcounter{enumi}{\value{saveenumi}}}
-
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\Vert#1\right\Vert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+%\numberwithin{equation}{section}
+%\numberwithin{problem}{subsection}
+%\numberwithin{definition}{subsection}
 \makeatletter
-\newenvironment<>{proofs}[1][\proofname]{%
-    \par
-    \def\insertproofname{#1\@addpunct{.}}%
-    \usebeamertemplate{proof begin}#2}
-  {\usebeamertemplate{proof end}}
+\@addtoreset{figure}{section}
 \makeatother
-%% Theme choice:
-%\usetheme{CambridgeUS}
+\let\StandardTheFigure\thefigure
+%\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
+\renewcommand{\thefigure}{\thesection}
+%\numberwithin{figure}{subsection}
+%\numberwithin{equation}{subsection}
+%\numberwithin{equation}{section}
+%\numberwithin{equation}{problem}
+%\numberwithin{problem}{subsection}
+\numberwithin{problem}{section}
+%%\numberwithin{definition}{subsection}
+%\makeatletter
+%\@addtoreset{figure}{problem}
+%\makeatother
+\makeatletter
+\@addtoreset{table}{section}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\StandardTheTable\thetable
+\let\vec\mathbf
+\numberwithin{equation}{section}
+\vspace{3cm}
 
-% Title page details: 
-\title{Assignment} 
-\author{Chittepu Rutheesh Reddy\\
- CS21BTECH11014}
-\date{\today}
-\logo{\large \LaTeX{}}
+%\title{
+%	\logo{Matrix Analysis through Octave}{\begin{center}\includegraphics[scale=.24]{tlc}\end{center}}{}{HAMDSP}
+%}
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+%\title{Matrix Analysis through Octave}
+%
+%
+% author names and IEEE memberships
+% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
+% a structure at a ~ so this keeps an author's name from being broken across
+% two lines.
+% use \thanks{} to gain access to the first footnote area
+% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
+% was not built to handle multiple paragraphs
+%
+
+% <-this % stops a space
+%\thanks{J. Doe and J. Doe are with Anonymous University.}% <-this % stops a space
+%\thanks{Manuscript received April 19, 2005; revised January 11, 2007.}}
+
+% note the % following the last \IEEEmembership and also \thanks - 
+% these prevent an unwanted space from occurring between the last author name
+% and the end of the author line. i.e., if you had this:
+% 
+% \author{....lastname \thanks{...} \thanks{...} }
+%                     ^------------^------------^----Do not want these spaces!
+%
+% a space would be appended to the last name and could cause every name on that
+% line to be shifted left slightly. This is one of those "LaTeX things". For
+% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
+% "AB" then you have to do: "\textbf{A}\textbf{B}"
+% \thanks is no different in this regard, so shield the last } of each \thanks
+% that ends a line with a % and do not let a space in before the next \thanks.
+% Spaces after \IEEEmembership other than the last one are OK (and needed) as
+% you are supposed to have spaces between the names. For what it is worth,
+% this is a minor point as most people would not even notice if the said evil
+% space somehow managed to creep in.
+% The paper headers
+%\markboth{Journal of \LaTeX\ Class Files,~Vol.~6, No.~1, January~2007}%
+%{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+% 
+% *** Note that you probably will NOT want to include the author's ***
+% *** name in the headers of peer review papers.                   ***
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
+% you desire.
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+%\IEEEpubid{0000--0000/00\$00.00~\copyright~2007 IEEE}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark.
+\title{\textbf{Assignment  \\ \Large AI1110: Probability and Random Variables \\ \large Indian Institute of Technology, Hyderabad}}
+\author{Chittepu Rutheesh Reddy \\ cs21btech11014}
+\maketitle{}
 
 
-\begin{document}
+%%
+\section{Uniform Random Numbers}
+Let $U$ be a uniform random variable between 0 and 1.
+\begin{enumerate}[label=\thesection.\arabic*
+,ref=\thesection.\theenumi]
+\item Generate $10^6$ samples of $U$ using a C program and save into a file called uni.dat .
+\\
+\solution Download the following files and execute the  C program.
+\begin{lstlisting}
+wget https://github.com/Rutheeshreddy/AI1110/blob/main/Assignment_revision-1/codes/1.1.c
 
-% Title page frame
-\begin{frame}
-    \titlepage 
-\end{frame}
+gcc 1.1.c -o 1.1 && ./1.1
+\end{lstlisting}
+%
+\item
+Load the uni.dat file into python and plot the empirical CDF of $U$ using the samples in uni.dat. The CDF is defined as
+\begin{align}
+F_{U}(x) = \pr{U \le x}
+\end{align}
+\\
+\solution  The following code plots Fig. \ref{fig:uni_cdf}
+\begin{lstlisting}
+wget https://github.com/Rutheeshreddy/AI1110/blob/main/Assignment_revision-1/codes/uni_cdf_plot.py
 
-% Remove logo from the next slides
-\logo{}
-
-
-% Outline frame
-\begin{frame}{Outline}
-    \tableofcontents
-\end{frame}
-
-
-
-
-% Lists frame
-\section{Uniform Distribution}
-\begin{frame}{Problem 1.3}
-
-\begin{block}
-{Question}
-Find theoretical expression of $F_U(x)$
-\end{block}
-\end{frame}
-
-
-\begin{frame}{Solution}
-For uniform distribution , the pdf is a constant
+python3 uni_cdf_plot.py
+\end{lstlisting}
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{./figs/uni_cdf}
+\caption{The CDF of $U$}
+\label{fig:uni_cdf}
+\end{figure}
+%
+\item
+Find a  theoretical expression for $F_{U}(x)$.
+\solution For uniform distribution , the pdf is a constant.
 Let,
 \begin{align}
 p_U(x) &= a, 0 \le x \le 1 \\
@@ -111,27 +302,132 @@ F_U(x) &= ax, 0 \le x \le 1 \\
 \text{As, } F_U(1) &= 1 \implies a = 1 \\
 \therefore F_U(x) &= x, 0 \le x \le 1
 \end{align}
-\end{frame} 
+\item
+The mean of $U$ is defined as
+%
+\begin{equation}
+E\sbrak{U} = \frac{1}{N}\sum_{i=1}^{N}U_i
+\end{equation}
+%
+and its variance as
+%
+\begin{equation}
+\text{var}\sbrak{U} = E\sbrak{U- E\sbrak{U}}^2 
+\end{equation}
+Write a C program to  find the mean and variance of $U$. \\
+\solution The following code calculates mean and variance
+\begin{lstlisting}
+wget https://github.com/Rutheeshreddy/AI1110/blob/main/Assignment_revision-1/codes/1.4.c
 
-\section{Gaussian Distribution}
-
-\begin{frame}{Problem 2.5}
-
-\begin{block}
-{Question}
+gcc 1.4.c -o 1.4 && ./1.4
+\end{lstlisting}
+\item Verify your result theoretically given that
+\end{enumerate}
+%
+\begin{equation}
+E\sbrak{U^k} = \int_{-\infty}^{\infty}x^kdF_{U}(x)
+\end{equation}
+\solution 
 \begin{align}
-p_X(x) = \frac{1}{\sqrt{2\pi}}exp(\frac{-x^2}{2}), \infty < x < \infty
+\text{As, } E(X) &= \int _{-\infty}^\infty x.p_X(x).dx \\
+E(X) &= \int_0^1 x.dx \\
+E(X) & = \sbrak{\frac{x^2}{2}}_0^1 \\
+E(X) &= \frac{1}{2}
 \end{align}
-Calculate mean and variance of X.
-\end{block}
-\end{frame}
+\begin{align}
+\text{And, } E(X^2) &= \int _{-\infty}^\infty x^2p_X(x).dx \\
+E(X^2) &= \int _0^1 x^2.dx \\
+E(X^2) &= \frac{1}{3} \\
+Var(X) &= E(X^2) - [E(X)]^2 \\
+Var(X) &= \frac{1}{12}
+\end{align}
+Theoretical values 
+\begin{align}
+E(X) &= 0.5 \\
+Var(X) &= 0.08333
+\end{align}
+Numerical values calculated in C program
+\begin{align}
+E(X) = 0.500007\\
+Var(X) = 0.083301
+\end{align}
+\section{Central Limit Theorem}
+%
+\begin{enumerate}[label=\thesection.\arabic*
+,ref=\thesection.\theenumi]
+%
+\item
+Generate $10^6$ samples of the random variable
+%
+\begin{equation}
+X = \sum_{i=1}^{12}U_i -6
+\end{equation}
+%
+using a C program, where $U_i, i = 1,2,\dots, 12$ are  a set of independent uniform random variables between 0 and 1
+and save in a file called gau.dat \\
+%
+\solution Download the following files and execute the  C program.
+\begin{lstlisting}
+wget https://github.com/Rutheeshreddy/AI1110/blob/main/Assignment_revision-1/codes/2.1.c
 
-\begin{frame}{Solution}
-Mean, $U(X) = \int _\infty^\infty xp_X(x).dx$ \\
+gcc 2.1.c -o 2.1 && ./2.1
+\end{lstlisting}
+\item
+Load gau.dat in python and plot the empirical CDF of $X$ using the samples in gau.dat. What properties does a CDF have?
+\\
+\solution The CDF of $X$ is plotted in Fig. \ref{fig:gauss_cdf}
+The following code plots Fig. \ref{fig:gauss_cdf}
+\begin{lstlisting}
+wget https://github.com/Rutheeshreddy/AI1110/blob/main/Assignment_revision-1/codes/gau_cdf_plot.py
+
+python3 gau_cdf_plot.py
+\end{lstlisting}
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{./figs/gauss_cdf}
+\caption{The CDF of $X$}
+\label{fig:gauss_cdf}
+\end{figure}
+(i)The function is symmetric
+\item
+Load gau.dat in python and plot the empirical PDF of $X$ using the samples in gau.dat. The PDF of $X$ is defined as
+\begin{align}
+p_{X}(x) = \frac{d}{dx}F_{X}(x)
+\end{align}
+What properties does the PDF have?
+\\
+\solution The PDF of $X$ is plotted in Fig. \ref{fig:gauss_pdf} using the code below
+\begin{lstlisting}
+wget https://github.com/Rutheeshreddy/AI1110/blob/main/Assignment_revision-1/codes/gau_pdf_plot.py
+
+python3 gau_pdf_plot.py
+\end{lstlisting}
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{./figs/gauss_pdf}
+\caption{The PDF of $X$}
+\label{fig:gauss_pdf}
+\end{figure}
+(i)The function is symmetric about y-axis.
+\item Find the mean and variance of $X$ by writing a C program.\\
+\solution The following code calculates mean and variance of X
+\begin{lstlisting}
+wget https://github.com/Rutheeshreddy/AI1110/blob/main/Assignment_revision-1/codes/2.4.c
+
+gcc 2.4.c -o 2.4 && ./2.4
+\end{lstlisting}
+\item Given that 
+\begin{align}
+p_{X}(x) = \frac{1}{\sqrt{2\pi}}\exp\brak{-\frac{x^2}{2}}, -\infty < x < \infty,
+\end{align}
+repeat the above exercise theoretically.
+%
+\end{enumerate}
+\solution Mean, $U(X) = \int _\infty^\infty xp_X(x).dx$ \\
 \begin{align}
 \text{So, } U(X) &= \int _{-\infty}^\infty x\frac{1}{\sqrt{2\pi}}e^{(\frac{-x^2}{2})}.dx \\
 U(X) &= \frac{-1}{\sqrt{2\pi}}\int_{-\infty}^\infty e^t.dt, \text{where, }t=\frac{-x^2}{2} \\
-U(X) = 0
+U(X) &= 0
 \end{align}
 As $E(X)$ = 0, $Var(X) = E(X^2)$ , So
 \begin{align}
@@ -139,22 +435,40 @@ E(X^2) &= \int_{-\infty}^\infty x^2\frac{1}{\sqrt{2\pi}}e^{(\frac{-x^2}{2})}.dx 
 E(X^2) &= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty x^2e^{(\frac{-x^2}{2})}.dx  = \frac{1}{\sqrt{2\pi}}\frac{\sqrt{2\pi}}{1}\\
 E(X^2) &= 1
 \end{align}
-\end{frame} 
 \section{From Uniform to Other}
+\begin{enumerate}[label=\thesection.\arabic*
+,ref=\thesection.\theenumi]
+%
+\item
+Generate samples of 
+%
+\begin{equation}
+V = -2\ln\brak{1-U}
+\end{equation}
+%
+and plot its CDF.  \\
+\solution The following codes generate samples and plot cdf in Fig.\ref{fig:rand_cdf}
+\begin{lstlisting}
+wget https://github.com/Rutheeshreddy/AI1110/blob/main/Assignment_revision-1/codes/3.1.c
 
-\begin{frame}{Problem 3.2}
+gcc 3.1.c -o 3.1 && ./3.1
 
-\begin{block}
-{Question}
-Find the theoretical expression of $F_V(X)$, where
-\begin{align}
-V = -2ln(1 - U)
-\end{align}
-\end{block}
-\end{frame}
+wget https://github.com/Rutheeshreddy/AI1110/blob/main/Assignment_revision-1/codes/3.1_cdf.py
 
-\begin{frame}{Solution}
-If Y = g(X), we know that $F_Y(y) = F_X(g^{-1}(y))$, here 
+python3 3.1_cdf.py
+\end{lstlisting}
+ \begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{./figs/rand_cdf}
+\caption{The CDF of $V$}
+\label{fig:rand_cdf}
+\end{figure}
+\item Find a theoretical expression for $F_V(x)$.
+%
+%\item
+%Generate the Rayleigh distribution from Uniform. Verify your result through graphical plots.
+\end{enumerate}
+\solution If Y = g(X), we know that $F_Y(y) = F_X(g^{-1}(y))$, here 
 \begin{align}
 X &= -2ln(1-Y) \\
 ln(1-Y) &= e^{\frac{-X}{2}}\\
@@ -168,5 +482,98 @@ F_V(X) &= F_U(1 - e^{\frac{-X}{2}})
   F_V(X) &= 1 - e^{\frac{-X}{2}}, X \ge 0 \\
   F_V(X) &= 0 , X < 0 
  \end{align}
-\end{frame} 
+ 
+\section{Triangular Distribution}
+\begin{enumerate}[label=\thesection.\arabic*
+,ref=\thesection.\theenumi]
+    \item Generate
+    \begin{align}
+        T=U_1+U_2
+    \end{align}
+    \solution Download the following files and execute the  C program.
+\begin{lstlisting}
+wget https://github.com/Rutheeshreddy/AI1110/blob/main/Assignment_revision-1/codes/3.1_cdf.py
+\end{lstlisting}
+Download the above files and execute the following commands
+\begin{lstlisting}
+$ gcc 4.1.c
+$ ./a.out
+\end{lstlisting}
+\item Find the CDF of $T$.\\
+\solution The CDF of $T$ is plotted in Fig. \ref{fig:4.2} using the code below
+\begin{lstlisting}
+wget https://github.com/Rutheeshreddy/AI1110/blob/main/Assignment_revision-1/codes/3.1_cdf.py
+\end{lstlisting}
+Download the above files and execute the following commands to produce Fig.\ref{fig:tri_cdf}
+\begin{lstlisting}
+$ python3 4.5cdf.py
+\end{lstlisting}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\columnwidth]{./figs/tri_cdf.png}
+\caption{The CDF of $T$}
+\label{fig:tri_cdf}
+\end{figure}
+\item Find the PDF of $T$.\\
+\solution The PDF of $T$ is plotted in Fig. \ref{fig:tri_cdf} using the code below
+\begin{lstlisting}
+wget https://github.com/Rutheeshreddy/AI1110/blob/main/Assignment_revision-1/codes/3.1_cdf.py
+\end{lstlisting}
+Download the above files and execute the following commands to produce Fig.\ref{fig:tri_cdf}
+\begin{lstlisting}
+$ python3 4.5pdf.py
+\end{lstlisting}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\columnwidth]{./figs/tri_pdf.png}
+\caption{The PDF of $T$}
+\label{fig:tri_pdf}
+\end{figure}
+\item Find the Theoreotical Expression for the PDF and CDF of $T$\\
+\solution
+\begin{align}
+    T&=U_1+U_2\\
+    \implies p_T(t)&=\int_{-\infty}^{t}p_{U1}(x)p_{U2}(y)dx\\
+    \text{As,}p_{U1}(x)&=p_{U1}(y)=p_{U}(u)\\
+    \implies p_T(t)&=\int_{-\infty}^{t}p_{U}(u)p_{U}(t-u)du
+    \end{align}
+    \begin{enumerate}
+        \item Theoretical PDF 
+        \begin{enumerate}
+            \item $t\le 1$
+            \begin{align}
+                p_T(t)&=\int_{0}^{t}p_{U}(t-u)du\\
+                \implies p_T(t)&=\int_{0}^{t} du=t
+            \end{align}
+            \item $t> 1$
+             \begin{align}
+                p_T(t)&=\int_{0}^{1}p_{U}(t-u)du\\
+                \implies p_T(t)&=\int_{t-1}^{1} du=2-t
+            \end{align}
+        \end{enumerate}
+        $\implies\boxed{ P_T(t) =
+        \begin{cases}
+         t     &0 \le t \le 1 \\
+         2-t   &1 < t \le 2\\
+         0     &t<0 \text{ or }t>2
+        \end{cases}
+        }$\\
+        \item Theoretical CDF 
+        \begin{align}
+            F_T(t)=\int_{-\infty}^{t}p_T(u)du
+        \end{align}
+        $\implies\boxed{
+            F_{T}(t)=
+            \begin{cases}
+             0   &t<0\\
+             \dfrac{t^2}{2} &0\le t \le 1\\
+             2t-1-\dfrac{t^2}{2} &1<t \le 2\\
+             1 &t>2
+            \end{cases}
+            }$\\
+    \end{enumerate}
+\item Verify your results through a plot \\
+\solution The Results are verfied in the plots
+Fig \ref{fig:tri_cdf} and Fig \ref{fig:tri_pdf}
+\end{enumerate}
 \end{document}
